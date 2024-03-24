@@ -37,21 +37,6 @@ export async function node(
     }
   });
 
-
-  // consensus(vp)                                                                          { vp is the initial value of process p }
-  // 1:  x := vp                                                                            { x is p's current estimate of the decision value }
-  // 2:  k := 0
-  // 3: while True do
-  // 4:   k := k + 1                                                                        { k is the current phase number }
-  // 5:   send (x, k) to all processes
-  // 6:   wait for messages of the form (R, k, *) from n-f processes                        { "*" can be 0 or 1 }
-  // 7:   if recceived more than n/2 (R, k, v) with the same v
-  // 8:   then send (P, k, v) to all processes
-  // 9:   else send (P, k, ?) to all processes
-  // 10:  wait for messages of the form (P, k, *) from n-f processes                        { "*" can be 0, 1 or ? }
-  // 11:  if received at least f+1 (P, k, *) from n-f processes then decide(v)
-  // 12:  if at least one (P, k, v) with v /= ? then x := v else x := 0 or 1 randomly       { query r.n.g.}
-
   // TODO implement this
   // this route allows the node to receive messages from other nodes
   node.post("/message", (req, res) => {
